@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap"
+    />
+    <title>A Synclets App</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>
+          <img src="/favicon.svg" />
+          Synclets
+        </h1>
+      </header>
+      <p>
+        This is more or less the simplest Synclets app you could imagine. It
+        contains two sets of key-values which are mutated with the buttons and
+        synced together via memory. There's no fancy rendering - just the raw
+        JSON of the underlying data.
+      </p>
+      <div>
+        <div>
+          <h2>Synclet 1</h2>
+          <div class="buttons">
+            <button id="random1">Random number</button>
+            <button id="toggle1" class="toggle">⏸</button>
+          </div>
+          <details open>
+            <summary>Data</summary>
+            <pre id="data1"></pre>
+          </details>
+          <details>
+            <summary>Meta</summary>
+            <pre id="meta1"></pre>
+          </details>
+        </div>
+      </div>
+      <div>
+        <div>
+          <h2>Synclet 2</h2>
+          <div class="buttons">
+            <button id="random2">Random number</button>
+            <button id="toggle2" class="toggle">⏸</button>
+          </div>
+          <details open>
+            <summary>Data</summary>
+            <pre id="data2"></pre>
+          </details>
+          <details>
+            <summary>Meta</summary>
+            <pre id="meta2"></pre>
+          </details>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/index.js"></script>
+  </body>
+</html>
