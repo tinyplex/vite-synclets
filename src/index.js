@@ -20,9 +20,11 @@ const getRandom = (max = 100) => Math.floor(Math.random() * max);
 
 addEventListener('load', async () => {
   const synclet1 = await createSynclet(
-    await createMemoryDataConnector(1),
-    await createMemoryMetaConnector(1),
-    await createMemoryTransport(),
+    {
+      dataConnector: createMemoryDataConnector(1),
+      metaConnector: createMemoryMetaConnector(1),
+      transport: createMemoryTransport(),
+    },
     {
       onSetAtom: async () => {
         updateJson('data1', await synclet1.getData());
@@ -34,9 +36,11 @@ addEventListener('load', async () => {
   await synclet1.start();
 
   const synclet2 = await createSynclet(
-    await createMemoryDataConnector(1),
-    await createMemoryMetaConnector(1),
-    await createMemoryTransport(),
+    {
+      dataConnector: createMemoryDataConnector(1),
+      metaConnector: createMemoryMetaConnector(1),
+      transport: createMemoryTransport(),
+    },
     {
       onSetAtom: async () => {
         updateJson('data2', await synclet2.getData());
